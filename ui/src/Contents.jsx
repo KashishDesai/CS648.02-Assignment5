@@ -10,12 +10,6 @@ import ProductImage from './ProductImage.jsx';
 
 const NotFound = () => <h1>Page not found</h1>;
 
-const MyProductImage = () => (
-  <ProductImage
-    image_url={window.location.pathname}
-  />
-);
-
 export default function Contents() {
   return (
     <div>

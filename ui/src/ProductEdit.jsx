@@ -38,7 +38,7 @@ export default class ProductEdit extends React.Component {
     const variables = { id, changes };
     const query = `mutation productUpdate($id: Int!, $changes: productUpdateInputs!) {  
       productUpdate(id: $id, changes: $changes) {    
-        id product_category product_name product_price product_image
+        id product_name product_price product_image product_category
       } 
     }`;
     await fetch(window.ENV.UI_API_ENDPOINT, {
@@ -54,7 +54,7 @@ export default class ProductEdit extends React.Component {
     const { match: { params: { id } } } = this.props;
     const query = `query product($id: Int!){
       product (id: $id) {
-        id product_category product_name product_price product_image
+        id product_name product_price product_image product_category
       }
     }`;
     const variables = { id };
@@ -106,11 +106,11 @@ export default class ProductEdit extends React.Component {
               <td>Category:</td>
               <td>
                 <select name="product_category" value={product_category} onChange={this.onChange}>
-                  <option value="shirt">Shirts</option>
-                  <option value="jeans">Jeans</option>
-                  <option value="jacket">Jackets</option>
-                  <option value="sweater">Sweaters</option>
-                  <option value="accessories">Accessories</option>
+                  <option value="Shirt">Shirts</option>
+                  <option value="Jeans">Jeans</option>
+                  <option value="Jacket">Jackets</option>
+                  <option value="Sweater">Sweaters</option>
+                  <option value="Accessories">Accessories</option>
                 </select>
               </td>
             </tr>
